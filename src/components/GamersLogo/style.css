@@ -1,0 +1,43 @@
+
+
+.logo__gamers__main .logo__contain {
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo__contain__white--pading {
+  padding-right: 370px;
+}
+
+.logo__contain__blue--pading {
+  padding-right: 236px;
+}
+
+.logo__gamers__main .logo__contain .p__blue {
+  color: #1565d8;
+  font-family: Righteous;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.logo__gamers__main .logo__contain .img__logo__white {
+  width: 52.222px;
+height: 57px;
+}
+
+.logo__gamers__main .logo__contain .p__white {
+  color: #fff;
+  font-family: Raanana;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.img__logo__blue {
+  width: 60.365px;
+}
