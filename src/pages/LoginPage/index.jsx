@@ -1,15 +1,15 @@
 import React from 'react'
 
-import GamersLogo from '../../components/GamersLogo'
-import GamersInfo from '../../components/GamersInfo'
+import GamersLogo from '../../components/Gamers/GamersLogo'
+import GamersInfo from '../../components/Gamers/GamersInfo'
 
 import './style.css'
-import GamersTextLogin from '../../components/GamersTextLogin';
-import GamersSocialMedia from '../../components/GamersSocialMedia';
-import GamersForm from '../../components/GamersForm';
+import GamersTextLogin from '../../components/Gamers/GamersTextLogin';
+import GamersSocialMedia from '../../components/Gamers/GamersSocialMedia';
+import GamersForm from '../../components/Gamers/GamersForm';
 import { INPUTS_LOGIN } from '../../constants';
-import GamersButtonReg from '../../components/GamersButtonReg';
-import GamersNoAccount from '../../components/GamersNoAccount';
+import GamersButtonReg from '../../components/Gamers/GamersButtonReg';
+import GamersNoAccount from '../../components/Gamers/GamersNoAccount';
 
 const LoginPage = () => {
   
