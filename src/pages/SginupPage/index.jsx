@@ -1,12 +1,12 @@
 import React from 'react'
-import GamersLogo from '../../components/GamersLogo'
+import GamersLogo from '../../components/Gamers/GamersLogo'
 import './style.css'
-import GamersInfo from '../../components/GamersInfo';
-import GamersTextRegister from '../../components/GamersTextRegister';
+import GamersInfo from '../../components/Gamers/GamersInfo';
+import GamersTextRegister from '../../components/Gamers/GamersTextRegister';
 
-import GamersButtonReg from '../../components/GamersButtonReg';
-import GamersLineOr from '../../components/GamersLineOr';
-import GamersForm from '../../components/GamersForm';
+import GamersButtonReg from '../../components/Gamers/GamersButtonReg';
+import GamersLineOr from '../../components/Gamers/GamersLineOr';
+import GamersForm from '../../components/Gamers/GamersForm';
 import { INPUTS_REGISTER } from '../../constants/index';
 
 
