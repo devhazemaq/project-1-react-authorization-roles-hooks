@@ -54,3 +54,9 @@ export const INPUTS_LOGIN = [
     placeholder: 'Enter Password',
   },
 ];
+
+export const ROLES = {
+  ADMIN: 'ADMIN',
+  USER: 'USER',
+  GUEST: 'GUEST',
+};
