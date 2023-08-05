@@ -1,0 +1,39 @@
+.labelForRrg {
+  display: block;
+  color: #696f79;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 4px 0;
+}
+
+.inputForRrg {
+  padding: 10px 10px;
+  width: 426px;
+  border-radius: 6px;
+  border: 1px solid #8692a6;
+}
+
+.errorMassge {
+  margin: 0 3px;
+  display: block;
+  height: 2px;
+  background-color: red;
+  color: red;
+  font-size: 15px;
+  /* visibility: hidden; */
+}
+
+.errorMassge2 {
+  margin: 0 3px;
+  display: block;
+  height: 1px;
+  color: red;
+  font-size: 15px;
+  /* visibility: hidden; */
+}
+.checkboxForRrg {
+  display: inline-block;
+}
