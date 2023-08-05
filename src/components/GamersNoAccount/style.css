@@ -1,0 +1,19 @@
+.gamersnoaccount__contain {
+  color: #696f79;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  position: relative;
+  top: -34px;
+}
+
+.gamersnoaccount__contain span {
+  color: #1565d8;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
