@@ -1,0 +1,38 @@
+.login__main {
+  width: 100%;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Left Part */
+
+
+.login__main .login__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 642px;
+
+  /* background-image: linear-gradient(#1565d8, #073dfd); */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.img__control {
+  width: 200px;
+  height: 300px;
+  margin-left: 180px;
+}
+
+/* Right Part */
+
+.login__main .login__right {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-items: center;
+  justify-content: space-evenly;
+}
