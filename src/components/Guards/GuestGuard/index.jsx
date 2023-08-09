@@ -2,8 +2,12 @@
 import { useNavigate } from 'react-router-dom';
 import { ROLES } from '../../../constants';
 import { PATHS } from '../../../router/paths';
+import { useAuthContext } from '../../../context/AuthContext';
 
-const GuestGuard = ({role,children}) => {
+const GuestGuard = ({children}) => {
+  
+  const {role} = useAuthContext();
+  
   const navigate = useNavigate();
 
   if (role === ROLES.ADMIN) return navigate(PATHS.HAZ);
