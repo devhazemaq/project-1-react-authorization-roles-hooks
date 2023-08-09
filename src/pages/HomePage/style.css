@@ -1,0 +1,58 @@
+.homepage__main {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+.dark .homepage__main {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  background: var(--color-black);
+}
+
+.homepage__main .righ__part {
+  overflow: hidden;
+  margin-left: 17px;
+}
+
+/* .swpier__haz .cards__contain {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+  bottom: 26px;
+} */
+ /*                     خاص بالسكرول  */
+.swpier__haz .cards__contain {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  /* overflow-x: auto;  شريط التمرير الأفقي
+  white-space: nowrap; منع الصور من الانكماش والانتقال إلى السطر التالي */
+  position: relative;
+  bottom: 26px;
+}
+
+/* .played__haz {
+
+} */
+
+.gamers__parts {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 94%;
+
+}
+
+.played__haz .played__contain {
+  position: relative;
+  bottom: 38px;
+}
+
+.friendsW {
+  position: relative;
+  margin-top: -26px;
+  width: 175px;
+}
