@@ -1,0 +1,86 @@
+.light .lastplayed__main {
+  position: relative;
+  width: 330px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  border-radius: 27px;
+  gap: 17px;
+  background: var(--color-white2);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 11px 5px ;
+}
+.dark .lastplayed__main {
+  position: relative;
+  width: 330px;
+  height: 44px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: var(--color-gray-dark);
+  border-radius: 27px;
+  gap: 17px;
+  color: #d8d8d8;
+  background: #515151;
+  margin: 11px 5px ;
+}
+
+.lastplayed__main:hover .colorShadow1 {
+  box-shadow: 0px 0px 6.300000190734863px 0px #dfe228,
+    0px 0px 12.600000381469727px 0px #dfe228,
+    0px 0px 44.099998474121094px 0px #dfe228,
+    0px 0px 88.19999694824219px 0px #dfe228,
+    0px 0px 151.1999969482422px 0px #dfe228,
+    0px 0px 264.6000061035156px 0px #dfe228;
+}
+.lastplayed__main:hover .colorShadow2 {
+  box-shadow: 0px 0px 6.08159875869751px 0px #619ed7,
+    0px 0px 12.16319751739502px 0px #619ed7,
+    0px 0px 42.57119369506836px 0px #619ed7,
+    0px 0px 85.14238739013672px 0px #619ed7,
+    0px 0px 145.9583740234375px 0px #619ed7,
+    0px 0px 255.42715454101562px 0px #619ed7;
+}
+.lastplayed__main:hover .colorShadow3 {
+  box-shadow: 0px 0px 6.300000190734863px 0px #1360dd,
+    0px 0px 12.600000381469727px 0px #1360dd,
+    0px 0px 44.099998474121094px 0px #1360dd,
+    0px 0px 88.19999694824219px 0px #1360dd,
+    0px 0px 151.1999969482422px 0px #1360dd,
+    0px 0px 264.6000061035156px 0px #1360dd;
+}
+.lastplayed__main:hover .colorShadow4 {
+  box-shadow: 0px 0px 6.300000190734863px 0px #17d924,
+    0px 0px 12.600000381469727px 0px #17d924,
+    0px 0px 44.099998474121094px 0px #17d924,
+    0px 0px 88.19999694824219px 0px #17d924,
+    0px 0px 151.1999969482422px 0px #17d924,
+    0px 0px 264.6000061035156px 0px #17d924;
+}
+
+.lastplayed__main .lastplayed__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.light .lastplayed__main .lastplayed__text {
+  color: var(--color-black);
+  font-family: Gilroy;
+  font-size: 20px;
+  line-height: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.dark .lastplayed__main .lastplayed__text {
+  color: var(--color-gray-dark2);
+  font-family: Gilroy;
+  font-size: 20px;
+  line-height: normal;
+  font-weight: 200;
+  line-height: normal; 
+}
