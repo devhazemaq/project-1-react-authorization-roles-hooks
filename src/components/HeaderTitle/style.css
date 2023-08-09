@@ -1,0 +1,20 @@
+.light .headertit__main {
+  color: var(--color-black);
+  font-family: Gilroy;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  position: relative;
+  bottom: 47px;
+}
+.dark .headertit__main {
+  color: var(--color-gray-dark2);
+  font-family: Gilroy;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  position: relative;
+  bottom: 47px;
+}
