@@ -22,3 +22,16 @@ code {
   height: 6000px;
 } */
 
+:root {
+  --color-white: #fff;
+  --color-white2: #FBFBFB;
+  --color-black: #222;
+  --color-gray: #c1c1c1;
+  --color-gray-dark: #515151;
+  --color-gray-dark2: #D8D8D8;
+  /* --primary-color: #fff; 
+  --secondary-color: #ff6347;  */
+  /* --accent-color: #4caf50;
+  --background-color: #f5f5f5; 
+  --text-color: #333;  */
+}
