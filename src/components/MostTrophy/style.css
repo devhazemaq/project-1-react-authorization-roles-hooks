@@ -1,0 +1,140 @@
+.mosttrophy__main {
+  position: relative;
+  /* overflow: hidden; */
+  /* border-radius: 0px 0px 45px 45px; */
+}
+
+.mosttrophy__main .img__trophy {
+  height: 219px;
+  width: 467px;
+  border-radius: 0px 0px 45px 45px;
+  position: relative;
+  margin-top: -33px;
+  border-radius: 43px;
+}
+
+.mosttrophy__main .img__trophy:hover {
+  box-shadow:  
+  0px 0px 6.300000190734863px 0px rgba(23, 217, 36, 0.5),
+  0px 0px 12.600000381469727px 0px rgba(23, 217, 36, 0.5),
+  0px 0px 44.099998474121094px 0px rgba(23, 217, 36, 0.5),
+  0px 0px 88.19999694824219px 0px rgba(23, 217, 36, 0.5),
+  0px 0px 151.1999969482422px 0px rgba(23, 217, 36, 0.5),
+  0px 0px 264.6000061035156px 0px rgba(23, 217, 36, 0.5); 
+}
+
+.img__trophy_kkk{
+  position: absolute;
+  left: 335px;
+  bottom: 105px;
+  width: 180px;
+  filter: grayscale(20%) contrast(100%);
+}
+
+.img__trophy_kkk2 {
+  position: absolute;
+  bottom: 142px;
+}
+
+.mosttrophy_misleadingtext {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; 
+  top: 566px;
+  right: 339px;
+  top: 566px;
+  height: 76px;
+  width: 468px;
+  border-radius: 0px 0px 45px 45px;
+  opacity: 0.7;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    radial-gradient(
+      231% 135.8% at 0.9% 2.98%,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  backdrop-filter: blur(5px);
+}
+
+.mosttrophy_misleadingtext .misle1 {
+  color: #d8d8d8;
+  font-family: Gilroy;
+  /* font-size: 25px; */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.mosttrophy_misleadingtext .misle2 {
+  color: #d8d8d8;
+  font-family: Gilroy;
+  /* font-size: 19px; */
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.misle1,
+.misle2 {
+  padding-left: 27px;
+}
+/* .mosttrophy__main::after {
+  content: "assassin's creed odyssey" "\A last played: 34 hours ago";
+
+  position: absolute;
+  display: block;
+  bottom: 39px;
+  left: 0;
+
+  width: 100%;
+  height: 80px;
+  border-radius: 0px 0px 45px 45px;
+opacity: 0.7;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), radial-gradient(231.00% 135.80% at 0.90% 2.98%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+backdrop-filter: blur(5px);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  z-index: 1;
+  /* border-radius: 0px 0px 84px 84px; */
+/* }  */
+
+/* .mosttrophy__main .img__trophy::after{
+  content: ' ';
+  position: absolute;
+  width: 470px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  border-radius: 0px 0px 45px 45px;
+  opacity: 0.7;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%), radial-gradient(231.00% 135.80% at 0.90% 2.98%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+  backdrop-filter: blur(5px);
+} */
+
+/* .img__trophy::after {
+  content: "أنت الأفضل";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  z-index: 111;
+} */
