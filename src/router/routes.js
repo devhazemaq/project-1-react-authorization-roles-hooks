@@ -8,6 +8,7 @@ import UserGuards from '../components/Guards/UserGuards';
 import GuestGuard from '../components/Guards/GuestGuard';
 import { Navigate } from 'react-router-dom';
 import ProfilePage from '../pages/ProfilePage';
+import SettingsUsersPade from '../pages/SettingsUsersPade';
 
 
 const adminPages = [
@@ -18,6 +19,10 @@ const adminPages = [
       {
         index: true,
         element: <HomePage/>,
+      },
+      {
+        path: '/admin/users',
+        element: <SettingsUsersPade/>,
       },
     ],
   },

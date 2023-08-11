@@ -7,7 +7,9 @@ export const PATHS = {
     PROFILE: '/users/profile',
   },
   ADMIN:{
-    ROOT: '/admin'
+    ROOT: '/admin',
+    USERS: '/admin/users',
+
   },
   ERRORS: {
     NOT_FOUND: '404',

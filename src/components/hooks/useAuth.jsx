@@ -54,7 +54,7 @@ const reduser = (state, action) => {
 
       }
     case AUTH_ACTION.LOGOUT:
-      ['user', 'token', 'role'].forEach((item) => (localStorage.removeItem(item)));
+      ['user', 'token', 'role', 'isAuth'].forEach((item) => (localStorage.removeItem(item)));
 
       return {
         isAuth: false,
@@ -120,21 +120,23 @@ const useAuth = () => {
     dispatch({ type: AUTH_ACTION.LOGOUT })
   }
 
-  const getProfileData = async () => {
-    const token = localStorage.getItem('token');
-    if(!token) return
-
-    dispatch({ type: AUTH_ACTION.SET_LOADING });
-    try {
-      const { data } = await axios.get(
-        AUTH_API + AUTH_API_PATHS.PROFLE, 
-        config
-      );
-      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data || data })
-    } catch (error) {
-      dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message })
-    }
-  }
+  // const getProfileData = async () => {
+  //   // const token = localStorage.getItem('token');
+  //   // if(!token) return
+  //   console.log(token + "توكن منقت بروفايل داتا")
+  //   dispatch({ type: AUTH_ACTION.SET_LOADING });
+  //   try {
+  //     const { data } = await axios.get( `https://react-tt-api.onrender.com/api/users`,
+  //       // AUTH_API + AUTH_API_PATHS.PROFLE, 
+  //       config
+  //     );
+  //     dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data?.users || data.users })
+  //   } catch (error) {
+  //     dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message })
+  //     console.log("هاد الخطأ من القت بروفايل داتا")
+  //     console.log(error)
+  //   }
+  // }
 
 
   return {
@@ -142,7 +144,7 @@ const useAuth = () => {
     login,
     signup,
     logout,
-    getProfileData,
+    // getProfileData,
   };
 };
 

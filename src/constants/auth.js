@@ -1,7 +1,7 @@
 export const AUTH_API_PATHS = {
   LOGIN: '/users/login',
   SIGNUP: '/users/signup',
-  PROFLE: '/users/profile',
+  PROFLE: '/users',
 }
 
 
