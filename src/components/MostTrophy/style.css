@@ -11,6 +11,7 @@
   position: relative;
   margin-top: -33px;
   border-radius: 43px;
+  transition: 1s;
 }
 
 .mosttrophy__main .img__trophy:hover {

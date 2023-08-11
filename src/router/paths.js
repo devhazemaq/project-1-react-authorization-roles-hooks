@@ -1,11 +1,13 @@
 export const PATHS = {
   LOGIN: '/login',
   SGININ: '/sginin',
+  SGINUP: '/sginup',
   USER: {
-    ROOT: '/home'
+    ROOT: '/user',
+    PROFILE: '/users/profile',
   },
   ADMIN:{
-    ROOT: '/haz'
+    ROOT: '/admin'
   },
   ERRORS: {
     NOT_FOUND: '404',

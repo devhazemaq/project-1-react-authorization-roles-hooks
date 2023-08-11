@@ -13,7 +13,7 @@ const GamersSocialMedia = () => {
         <img src={`${pathImage}soch-google.svg`} alt="soch-google" />
       </div>
       <div className='soch__cont' >
-        <img src={`${pathImage}soch-twitter.svg`} alt="soch-twitter" />
+        <img src={`${pathImage}logos_twitter.svg`} alt="soch-twitter" />
       </div>
       <div className='soch__cont' >
         <img src={`${pathImage}soch-linkedin.svg`} alt="soch-linkedin" />

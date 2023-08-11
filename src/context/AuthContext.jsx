@@ -11,13 +11,12 @@ export const useAuthContext = () => useContext(AuthContext);
 
 const AuthProvider = ({ children }) => {
 
-  // const [role, setRole] = useState(ROLES.USER);
-
   const data = useAuth();
+  console.log(data);
 
   return (
 
-    <AuthContext.Provider value={{ data }} >
+    <AuthContext.Provider value={ data } >
       {children}
     </AuthContext.Provider>
 

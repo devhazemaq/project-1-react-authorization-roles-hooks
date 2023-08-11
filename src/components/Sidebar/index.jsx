@@ -1,17 +1,34 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
-import { PATHS } from '../../router/paths';
+import React, { useEffect } from 'react'
+// import { NavLink, useNavigate } from 'react-router-dom';
+// import { PATHS } from '../../router/paths';
 import './style.css'; 
 import { useThemeContext } from '../../context/ThemeContext';
+import { useAuthContext } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { ROLES } from '../../constants';
 
 
 
 
 const Sidebar = () => {
-
+  const {role, user, logout} =useAuthContext(); 
   const {theme, toggleTheme} = useThemeContext();
-  
   const pathImage = "/assets/images/";
+
+
+  const navigate =  useNavigate()
+
+  const handleLogout = () => {
+    logout();
+    console.log(role + ' handleLogout');
+    navigate("/")
+  };
+
+  useEffect(()=>{},[])
+
+
+console.log(role);
+console.log(user);
 console.log(theme);
   return (
     <div className='sidebar__main'>
@@ -19,22 +36,28 @@ console.log(theme);
       <div className="sidebarIcon__contain">
         <ul className='ulIconSidepar'>
           <li>
-              <NavLink to={PATHS.ERRORS.NOT_FOUND} >
-                <img src={`${pathImage}forSideber/svgviewer-output3Adjust.svg`} alt="svgviewer-output3Adjust" className='adjust' />
-              </NavLink> 
+              {role === ROLES.ADMIN? 
+                  <img src={`${pathImage}forSideber/svgviewer-output3Adjust.svg`} alt="svgviewer-output3Adjust" className='adjust' />
+                : 
+                <></> 
+              }
           </li>
           <li>
-              <NavLink to={PATHS.ERRORS.NOT_FOUND} >
-                <img src={`${pathImage}forSideber/exit.png`} alt="exit" className='exit' />
+              {/* <NavLink to={PATHS.LOGIN} > */}
+                <img src={`${pathImage}forSideber/exit.png`} 
+                alt="exit" className='exit'
+                onClick={
+                    handleLogout
+                  
+                }
                 
-              </NavLink> 
+              />
+                
+            
           </li>
         </ul>
       </div>
-      {/* iconTheme__theme 
-      `iconTheme__theme ${theme}`
-      */}
-
+        
       
       <div className={`iconTheme__theme`} onClick= {toggleTheme } >
           <img
@@ -46,10 +69,13 @@ console.log(theme);
             src={`${pathImage}forSideber/svgviewer-output5-sun-light.svg`} 
             alt="sun"
             
+            
           />
       </div>
     </div>
+    
   )
+  
 };
 
 export default Sidebar;

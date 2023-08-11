@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import { useReducer } from 'react'
 import { ROLES } from '../../constants';
 import { AUTH_ACTION, AUTH_API_PATHS } from '../../constants/auth';
 import axios from 'axios';
@@ -7,11 +7,17 @@ import { AUTH_API } from '../../config';
 
 
 
+const getisAuth = () => localStorage.getItem("isAuth") || false;
+const getRole = () => localStorage.getItem("role") || ROLES.GUEST;
+const getUser = () => JSON.parse(localStorage.getItem("user")) || null;
+const getToken = () => localStorage.getItem("token") || null;
+
+
 const inintalState = {
-  isAuth: false,
-  user: null,
-  token: null,
-  role: ROLES.GUEST,
+  isAuth: getisAuth(),
+  user: getUser(),
+  token: getToken(),
+  role:  getRole(),
   error: '',
   isLoading: false,
 
@@ -28,26 +34,36 @@ const reduser = (state, action) => {
     // "هين خليناها AUTHORIZE مش لوقن او ساين اب عشان نفس العمليةهتم على الحالتين تقريبا عشان هيك هاد مجرد تسمية عشان تشمل لتنين"
     case AUTH_ACTION.AUTHORIZE:
 
-      const token = action.payload.token || state.token;  // هبك لانو بالقت بروفايل مش هيكون فيه توكن يعني نلل
-      const role = action.payload.isAdmin ? ROLES.ADMIN : ROLES.USER;
+      const token = action?.payload?.token || state?.token;  // هبك لانو بالقت بروفايل مش هيكون فيه توكن يعني نلل
+      const role = action?.payload?.isAdmin ? ROLES.ADMIN : ROLES.USER ;
 
       localStorage.setItem('token', token);
       localStorage.setItem('role', role);
-      localStorage.setItem('user', JSON.stringify(action.payload.user));
+      localStorage.setItem('user', JSON.stringify(action.payload));
+      localStorage.setItem("isAuth", true);
+
 
       return {
         ...state,
         isAuth: true,
-        user: action.payload.user,
+        user: action?.payload?.user,
         token: token,
         role: role,
         error: null,
         isLoading: false,
+
       }
     case AUTH_ACTION.LOGOUT:
       ['user', 'token', 'role'].forEach((item) => (localStorage.removeItem(item)));
 
-      return inintalState
+      return {
+        isAuth: false,
+        user: null,
+        token: null,
+        role: ROLES.GUEST,
+        isLoading: false,
+        error: null,
+      };
 
     case AUTH_ACTION.SET_ERROR:
       return {
@@ -79,10 +95,13 @@ const useAuth = () => {
   const login = async (body) => {
     dispatch({ type: AUTH_ACTION.SET_LOADING });
     try {
+      // const { data } = await axios.post(`https://react-tt-api.onrender.com/api${AUTH_API_PATHS.LOGIN}`, body);
       const { data } = await axios.post(AUTH_API + AUTH_API_PATHS.LOGIN, body);
-      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data });
+      
+      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data || data });
     } catch (error) {
-      dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message });
+      dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message })
+      console.log("خطأ من اللوقن");
     }
   };
 
@@ -91,7 +110,7 @@ const useAuth = () => {
     dispatch({ type: AUTH_ACTION.SET_LOADING });
     try {
       const { data } = await axios.post(AUTH_API + AUTH_API_PATHS.SIGNUP, body);
-      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data });
+      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data || data });
     } catch (error) {
       dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message });
     }
@@ -102,6 +121,8 @@ const useAuth = () => {
   }
 
   const getProfileData = async () => {
+    const token = localStorage.getItem('token');
+    if(!token) return
 
     dispatch({ type: AUTH_ACTION.SET_LOADING });
     try {
@@ -109,7 +130,7 @@ const useAuth = () => {
         AUTH_API + AUTH_API_PATHS.PROFLE, 
         config
       );
-      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data })
+      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data || data })
     } catch (error) {
       dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message })
     }

@@ -1,15 +1,11 @@
 import React from 'react'
-
 import GamersLogo from '../../components/Gamers/GamersLogo'
 import GamersInfo from '../../components/Gamers/GamersInfo'
-
-import './style.css'
 import GamersTextLogin from '../../components/Gamers/GamersTextLogin';
 import GamersSocialMedia from '../../components/Gamers/GamersSocialMedia';
 import GamersForm from '../../components/Gamers/GamersForm';
-import { INPUTS_LOGIN } from '../../constants';
-import GamersButtonReg from '../../components/Gamers/GamersButtonReg';
 import GamersNoAccount from '../../components/Gamers/GamersNoAccount';
+import './style.css'
 
 const LoginPage = () => {
   
@@ -29,9 +25,7 @@ const LoginPage = () => {
 
         <GamersSocialMedia />
         
-        <GamersForm inputs__array={INPUTS_LOGIN} />
-
-        <GamersButtonReg btnText="Register Account" />
+        <GamersForm  />
         
         <GamersNoAccount />
       </div> 

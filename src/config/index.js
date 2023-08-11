@@ -1,1 +1,1 @@
-export const AUTH_API = process.env.REACT_API_AUTH_API;
+export const AUTH_API = process.env.REACT_APP_AUTH_API;

@@ -30,7 +30,7 @@
   height: 208px;
   bottom: 20px;
   border-radius: 60px;
-  
+  transition: 1s;
 }
 
 .rightDirection{
@@ -41,4 +41,5 @@
   height: 208px;
   bottom: 20px;;
   border-radius: 60px;
+  transition: 1s;
 }
