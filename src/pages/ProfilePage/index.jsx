@@ -8,6 +8,7 @@ const ProfilePage = () => {
   const { user } = useAuth();
 
   console.log(user);
+  
   return (
     <div>
       <h1>Profile User</h1>

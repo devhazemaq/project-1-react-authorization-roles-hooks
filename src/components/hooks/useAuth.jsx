@@ -120,23 +120,23 @@ const useAuth = () => {
     dispatch({ type: AUTH_ACTION.LOGOUT })
   }
 
-  // const getProfileData = async () => {
-  //   // const token = localStorage.getItem('token');
-  //   // if(!token) return
-  //   console.log(token + "توكن منقت بروفايل داتا")
-  //   dispatch({ type: AUTH_ACTION.SET_LOADING });
-  //   try {
-  //     const { data } = await axios.get( `https://react-tt-api.onrender.com/api/users`,
-  //       // AUTH_API + AUTH_API_PATHS.PROFLE, 
-  //       config
-  //     );
-  //     dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data?.users || data.users })
-  //   } catch (error) {
-  //     dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message })
-  //     console.log("هاد الخطأ من القت بروفايل داتا")
-  //     console.log(error)
-  //   }
-  // }
+  const getProfileData = async () => {
+    // const token = localStorage.getItem('token');
+    // if(!token) return
+    console.log(token + "توكن منقت بروفايل داتا")
+    dispatch({ type: AUTH_ACTION.SET_LOADING });
+    try {
+      const { data } = await axios.get( `https://react-tt-api.onrender.com/api/users`,
+        // AUTH_API + AUTH_API_PATHS.PROFLE, 
+        config
+      );
+      dispatch({ type: AUTH_ACTION.AUTHORIZE, payload: data?.data?.users || data.users })
+    } catch (error) {
+      dispatch({ type: AUTH_ACTION.SET_ERROR, payload: error.message })
+      console.log("هاد الخطأ من القت بروفايل داتا")
+      console.log(error)
+    }
+  }
 
 
   return {
@@ -144,7 +144,7 @@ const useAuth = () => {
     login,
     signup,
     logout,
-    // getProfileData,
+    getProfileData,
   };
 };
 
