@@ -1,6 +1,6 @@
-export const USERS_COLUMNS = () => [ //handleDelete, handleEdit
+export const USERS_COLUMNS = (heandleDeleteUSer) => [ //handleDelete, handleEdit
   {
-    key: 'id',
+    key: '_id',
     title: 'Id',
   },
   {
@@ -17,10 +17,9 @@ export const USERS_COLUMNS = () => [ //handleDelete, handleEdit
     title: 'Actions',
     render: (data) => (
       <div onClick={(e) => e.stopPropagation()}>
-
-        <button >delete</button>
-        {/* <button onClick={() => handleDelete(data.id)}>delete</button> */}
-        {/* <button onClick={() => handleEdit(data.id)}>edit</button> */}
+        {/* {console.log(data)}  */}
+        <button onClick={()=> heandleDeleteUSer(data._id)} >delete</button>
+    
       </div>
     ),
   },

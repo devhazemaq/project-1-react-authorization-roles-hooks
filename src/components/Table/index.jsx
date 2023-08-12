@@ -8,6 +8,7 @@ const Table = ({ isLoading, columns, data, onRowClick = () => {} }) => {
         <thead>
           <tr>
             {columns.map((column) => (
+              
               <th key={column.key}>{column.title}</th>
             ))}
           </tr>

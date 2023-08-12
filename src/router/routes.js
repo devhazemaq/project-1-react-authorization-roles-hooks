@@ -24,6 +24,7 @@ const adminPages = [
         path: '/admin/users',
         element: <SettingsUsersPade/>,
       },
+      
     ],
   },
 ];
