@@ -12,6 +12,9 @@
   width: 426px;
   padding: 12px 0;
 }
+.btnMargTop{
+  margin-top: 15px;
+}
 
 .gamers__btn--white {
   background: #fff;
