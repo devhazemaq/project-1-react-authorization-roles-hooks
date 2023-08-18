@@ -7,9 +7,9 @@ const Table = ({ isLoading, columns, data, onRowClick = () => {} }) => {
       <table>
         <thead>
           <tr>
-            {columns.map((column) => (
+            {columns.map((column,index) => (
               
-              <th key={column.key}>{column.title}</th>
+              <th key={index}>{column.title}</th>
             ))}
           </tr>
         </thead>
