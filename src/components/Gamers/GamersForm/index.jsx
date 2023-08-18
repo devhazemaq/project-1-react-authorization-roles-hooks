@@ -1,49 +1,61 @@
-import React, { useState } from 'react'
-
+import React from 'react'
 import { useAuthContext } from '../../../context/AuthContext';
-
-import './style.css'
+import * as Yup from "yup"
 import GamersButtonReg from '../GamersButtonReg';
+import './style.css'
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 
+const formScama = Yup.object({
+  email: Yup.string()
+    .required('email is required')
+    .email('email not correct'),
+
+  password: Yup.string()
+    .required('password is required'),
+
+});
 
 const GamersForm = () => {
+
   const { login, isLoading } = useAuthContext(); //isLoading
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formScama)
+  })
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    login(formData)
 
-
+  const submit = (body) => {
+    
+    const data = {
+      email: body?.email,
+      password: body?.password,
+    }
+    
+    login(data)
   };
 
-  const handleChangeInput = ({ target: { value, name } }) =>
-    setFormData((prev) => ({ ...prev, [name]: value }));
-
-  // const onClickBtn = () => {
-  //   console.log('onClickBtn')
-  // }
 
 
   return (
 
 
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(submit)}>
       <label htmlFor='email' className='checkboxForRrg' >email</label>
       <input
         className='inputForRrg'
-
         type='text'
         id='email'
         name='email'
-        onChange={handleChangeInput}
-        value={formData.email}
+        {...register('email')}
       />
+        
+        {errors?.email && <span className='span__errors'>{errors?.email?.message}</span>}
 
       <label htmlFor='password' className='checkboxForRrg' >Password</label>
       <input
@@ -51,12 +63,11 @@ const GamersForm = () => {
         type='password'
         id='password'
         name='password'
-        onChange={handleChangeInput}
-        value={formData.password}
+        {...register('password')}
       />
-
+      {errors?.password && <span className='span__errors'>{errors?.password?.message}</span>}
       <GamersButtonReg btnText={isLoading ? "Loding" : "Login"} type='submit' />
-      {/* <button type='submit'>Login</button> */}
+    
 
 
     </form>
@@ -75,4 +86,3 @@ export default GamersForm;
 
 
 
- 

@@ -1,16 +1,28 @@
-import React, { useState } from 'react'
+
 import { useAuthContext } from '../../../context/AuthContext'
 import GamersButtonReg from '../GamersButtonReg';
 import * as Yup from "yup";
-
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import './style.css';
 
 
 const formScama = Yup.object({
-  text: Yup.string().required('text required'),
-  email: Yup.string().required('email required'),
-  password: Yup.string().required('password required')
-  
-})
+  userName: Yup.string()
+    .required('user name is required'),
+
+  email: Yup.string()
+    .required('email is required')
+    .email('email not correct'),
+
+  password: Yup.string()
+    .required('password is required'),
+
+  // rePassword: Yup.string()
+  //   .required('Retype password')
+  //   .oneOf([Yup.ref('passeord', null)],'Retype the password correctly' ),
+
+});
 
 
 
@@ -19,90 +31,70 @@ const formScama = Yup.object({
 
 const GamersFormSign = () => {
 
-  const { signup } = useAuthContext();
-  const [errors, setErrors] = useState({}); 
-  const [formData, setFormData] = useState({
-    email: '',
-    name: '',
-    password: '',
-    // rePassword: '',
+  const { signup, isLoading } = useAuthContext();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formScama),
   });
 
-  // const [errors,setErrors] = useState({});
 
-  const handelSubmit = async (e) => {
-    e.preventDefault();
-    
-    // const {name, value, type} = e.target;
-    
-    try{
-      const data = await formScama.validate(formData,{
-        abortEarly: false,
-      })
-      console.log(data);
-      setErrors(null)
-    }catch(error){
-      // console.log(error);
-      setErrors(error.inner.map((error)=>({[error.path]: error.messge})))
-      
-      const myErrors = {};
-      error.inner.forEach((error)=>{
-        myErrors[error.path] = error.messge;
-      });
+  const submit = async (body) => {
+
+    const data = {
+      email: body?.email,
+      name: body?.userName,
+      password: body?.password,
     }
-    signup(formData)
+
+    signup(data)
   }
-  // console.log(errors)
 
 
-  const handleChangeInput2 = ({ target: { value, name } }) =>
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+  // const handleChangeInput2 = ({ target: { value, name } }) =>
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
 
 
 
 
 
   return (
-    <form onSubmit={handelSubmit}>
+    <form onSubmit={handleSubmit(submit)}>
       <label htmlFor='userName' className='labelForRrg' >user name</label>
       <input
         id='userName'
         className='inputForRrg'
-        type="text"
-        name="name"
-        onChange={handleChangeInput2}
-        value={formData.name}
+        type='text'
+        name='userName'
+        {...register('userName')}
       />
+
+      {errors?.userName && <span className='span__errors'>{errors?.userName?.message}</span>}
       <label htmlFor='email' className='labelForRrg' >Email</label>
       <input
         id='email'
         className='inputForRrg'
-        type="email"
-        name="email"
-        onChange={handleChangeInput2}
-        value={formData.email}
+        type='email'
+        name='email'
+        {...register('email')}
       />
+      {errors?.email && <span className='span__errors'>{errors?.email?.message}</span>}
       <label htmlFor='password' className='labelForRrg' >password</label>
       <input
         id='password'
         className='inputForRrg'
         type="password"
         name="password"
-        onChange={handleChangeInput2}
-        value={formData.password}
+        {...register('password')}
       />
-      {/* <label htmlFor='rePassword' className='labelForRrg' >RE password</label>
-      <input
-        id='rePassword'
-        className='inputForRrg'
-        type="password"
-        name="rePassword"
-        onChange={handleChangeInput2}
-        value={formData.rePassword}
-        
-      /> */}
+      {errors?.password && <span className='span__errors'>{errors?.password?.message}</span>}
 
-      <GamersButtonReg btnText="Register Account" type="submit" btnMarg="btnMargTop" />
+
+      <GamersButtonReg btnText={isLoading ? 'loading...' : 'Register Account'} type="submit" btnMarg="btnMargTop" />
     </form>
   )
 }
