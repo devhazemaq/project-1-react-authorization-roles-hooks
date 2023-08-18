@@ -9,6 +9,7 @@ export const PATHS = {
   ADMIN:{
     ROOT: '/admin',
     USERS: '/admin/users',
+    PROFILE: '/users/profile',
 
   },
   ERRORS: {

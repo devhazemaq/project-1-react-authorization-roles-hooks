@@ -1,14 +1,18 @@
-import LoginPage from '../pages/LoginPage'
-import SginupPage from '../pages/SginupPage'
-import HomePage from '../pages/HomePage'
-import { PATHS } from './paths';
-// import HazPage from '../pages/HazPage';
+import { lazy } from 'react';
+import { Navigate } from 'react-router-dom';
 import AdminGuards from '../components/Guards/AdminGuards';
 import UserGuards from '../components/Guards/UserGuards';
 import GuestGuard from '../components/Guards/GuestGuard';
-import { Navigate } from 'react-router-dom';
-import ProfilePage from '../pages/ProfilePage';
-import SettingsUsersPade from '../pages/SettingsUsersPade';
+
+import { PATHS } from './paths';
+
+
+const LoginPage = lazy (() => import('../pages/LoginPage'))
+const SginupPage = lazy (() => import('../pages/SginupPage'))
+const HomePage = lazy (() => import('../pages/HomePage'))
+const ProfilePage = lazy (() => import('../pages/ProfilePage'));
+const SettingsUsersPade = lazy (() => import('../pages/SettingsUsersPade'));
+
 
 
 const adminPages = [
@@ -23,6 +27,10 @@ const adminPages = [
       {
         path: '/admin/users',
         element: <SettingsUsersPade/>,
+      },
+      {
+        path: '/admin/user/profile',
+        element: <ProfilePage/>,
       },
       
     ],
