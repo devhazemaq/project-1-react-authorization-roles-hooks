@@ -29,9 +29,13 @@ code {
   --color-gray: #c1c1c1;
   --color-gray-dark: #515151;
   --color-gray-dark2: #D8D8D8;
-  /* --primary-color: #fff; 
-  --secondary-color: #ff6347;  */
-  /* --accent-color: #4caf50;
-  --background-color: #f5f5f5; 
-  --text-color: #333;  */
-}
+  --color--blue: #1565D8;
+  --color--table2--light--1: #fff;
+  --color--table2--light--2: #f0f0f0;
+  --color--table2--light--3: #f5f5f5;
+  --color--blue: #1565D8;
+  --color--table2--dark--1: #212529;
+  --color--table2--dark--2: #42474d;
+  --color--table2--dark--3: #373a3c;
+  --color--table2--dark--4: #292d32;
+  
