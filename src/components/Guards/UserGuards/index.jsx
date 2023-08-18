@@ -7,7 +7,7 @@ import { useAuthContext } from '../../../context/AuthContext';
 const UserGuards = () => {
 
   const { role } = useAuthContext(); 
-  console.log(role)
+  // console.log(role)
 
   const navigate = useNavigate();
 

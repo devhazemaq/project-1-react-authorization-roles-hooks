@@ -7,7 +7,7 @@ import { useAuthContext } from '../../../context/AuthContext';
 const AdminGuards = () => {
 
   const {role} = useAuthContext();
-  console.log(role);
+  // console.log(role);
   const navigate = useNavigate();
 
   if (role === ROLES.ADMIN) return <Outlet/>
