@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App'
@@ -13,7 +13,9 @@ root.render(
     <BrowserRouter>
       <ThemeProvider>
         <AuthProvider>
-          <App />
+          {/* <Suspense fallback={<h1>app loading....</h1>}> */}
+            <App />
+          {/* </Suspense> */}
         </AuthProvider>
       </ThemeProvider>
     </BrowserRouter>

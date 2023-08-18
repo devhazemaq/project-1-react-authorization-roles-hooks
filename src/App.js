@@ -5,6 +5,8 @@ import { useThemeContext } from "./context/ThemeContext";
 import MainLayout from "./components/MainLayout";
 // import HazPage from "./pages/HazPage";
 import  Router  from "./router";
+import { Suspense } from "react";
+import LoadingPage from "./pages/LoadingPage";
 
 
 
@@ -18,7 +20,9 @@ function App() {
       {/* < SginupPage />
       < LoginPage /> */}
       <MainLayout>
-        <Router />
+        <Suspense fallback={<LoadingPage />}>
+          <Router />
+        </Suspense>
       </MainLayout>
 
       {/* <HazPage /> */}
