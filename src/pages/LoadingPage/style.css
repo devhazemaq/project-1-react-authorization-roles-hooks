@@ -1,0 +1,41 @@
+.loading__contain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 328px) {
+  .loading__contain {
+    flex-wrap: wrap;
+  }
+}
+
+.loading__contain img {
+  max-width: 100%;
+  width: 94px;
+}
+
+@media (max-width: 768px) {
+  .loading__contain img {
+    width: 80px;
+  }
+}
+
+.loading__contain span {
+  color: var(--color--blue);
+  font-family: 'Righteous', cursive;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+  .loading__contain span {
+    font-size: 60px;
+  }
+}
