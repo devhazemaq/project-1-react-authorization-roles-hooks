@@ -1,0 +1,5 @@
+.span__errors {
+  color: red;
+  margin-bottom: 1px;
+  display: block;
+}
