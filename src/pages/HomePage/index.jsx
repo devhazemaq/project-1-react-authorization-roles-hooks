@@ -5,15 +5,16 @@ import Sidebar from '../../components/Sidebar';
 import UserAccount from '../../components/UserAccount';
 import HeaderTitle from '../../components/HeaderTitle';
 import CardImage from '../../components/CardImage';
-
-import './style.css';
 import LastPlayed from '../../components/LastPlayed';
 import MostTrophy from '../../components/MostTrophy';
+import './style.css';
+
+
 
 
 const HomePage = () => {
 
-
+  
 
   const pathImage = "/assets/images/games/";
   const pathImagePlayed = "/assets/images/lastPlayed/";
@@ -29,7 +30,7 @@ const HomePage = () => {
         <div className="swpier__haz">
           <HeaderTitle titleText="NEW GAMES" />
 
-          <div className='cards__contain' >
+          <div className='cards__contain ' >
             <CardImage imgMain={`${pathImage}game1.png`} imgMainInner={`${pathImage}game1-inner.png`} />
             <CardImage imgMain={`${pathImage}game2.png`} imgMainInner={`${pathImage}game2-inner.png`} />
             <CardImage imgMain={`${pathImage}game3.png`} imgMainInner={`${pathImage}game3-inner.png `} direction="rightDirection" />
