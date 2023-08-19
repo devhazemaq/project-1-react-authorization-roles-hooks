@@ -28,8 +28,10 @@ const GuestGuard = ({children}) => {
     }
   }, [role, navigate]);
   
-
-  return children;  
+  if (role === ROLES?.GUEST) {
+    return children;  
+  }
+    
 }
 
 export default GuestGuard;
