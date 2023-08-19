@@ -17,7 +17,7 @@ const SettingsUsersPade = lazy (() => import('../pages/SettingsUsersPade'));
 
 const adminPages = [
   {
-    path: '/admin',
+    path: PATHS.ADMIN.ROOT,
     element: <AdminGuards />,
     children: [
       {
@@ -25,11 +25,11 @@ const adminPages = [
         element: <HomePage/>,
       },
       {
-        path: '/admin/users',
+        path: PATHS.ADMIN.USERS,
         element: <SettingsUsersPade/>,
       },
       {
-        path: '/admin/user/profile',
+        path: PATHS.ADMIN.PROFILE,
         element: <ProfilePage/>,
       },
       
@@ -39,7 +39,7 @@ const adminPages = [
 
 const userPages = [
   { 
-    path: '/user' ,
+    path: PATHS.USER.ROOT ,
     element: <UserGuards />,
     children: [
       {
@@ -47,7 +47,7 @@ const userPages = [
         element: <HomePage/>,
       },
       {
-        path: '/user/profile',
+        path: PATHS.USER.PROFILE,
         element: <ProfilePage/>,
       },
 
@@ -55,21 +55,10 @@ const userPages = [
   },      
 ];
 
-// const userPages = [
-//   {
-//     path: '/' ,
-//     // index: true,
-//     element: (
-//       <UserGuards >
-//         <HomePage />
-//       </UserGuards>
-//     ),
-//   },
-// ];
 
 const gusetPages =[
   {
-    path: '/',
+    path: PATHS.LOGIN,
     // index: true,
     element: (
       <GuestGuard>
@@ -78,7 +67,7 @@ const gusetPages =[
     )
   },
   {
-    path: PATHS.SGININ,
+    path: PATHS.SGINUP,
     element: (
       <GuestGuard>
         <SginupPage />
@@ -103,71 +92,3 @@ const routes = [
 ];
 
 export {  routes };
-
-
-// import { Navigate } from 'react-router-dom';
-// import { PATHS } from './pathes';
-// import { Typography } from '../components/Typography';
-// import LoginPage from '../pages/LoginPage';
-// import SignupPage from '../pages/SignupPage';
-// import GamesPage from '../pages/GamesPage';
-// import ProfilePage from '../pages/ProfilePage';
-// import UsersPage from '../pages/UsersPage';
-// import GamesOutlet from '../components/GamesOutlet';
-// import GuestGuard from '../components/Guards/GuestGuard';
-// import UserGuard from '../components/Guards/UserGaurd';
-// import AdminGuard from '../components/Guards/AdminGuard';
-// import NotFound from '../pages/NotFound';
-
-// export const routes = (role) => [
-//   {
-//     path: PATHS.LOGIN,
-//     element: (
-//       <GuestGuard>
-//         <LoginPage />
-//       </GuestGuard>
-//     ),
-//   },
-//   {
-//     path: PATHS.SIGNUP,
-//     element: (
-//       <GuestGuard>
-//         <SignupPage />
-//       </GuestGuard>
-//     ),
-//   },
-//   {
-//     path: PATHS.HOME,
-//     element: (
-//       <UserGuard>
-//         <GamesPage />
-//       </UserGuard>
-//     ),
-//     children: [
-//       {
-//         index: true,
-//         element: <GamesOutlet />,
-//       },
-//       {
-//         path: PATHS.PROFILE,
-//         element: <ProfilePage />,
-//       },
-//       {
-//         path: PATHS.USERS,
-//         element: (
-//           <AdminGuard>
-//             <UsersPage />
-//           </AdminGuard>
-//         ),
-//       },
-//     ],
-//   },
-//   {
-//     path: PATHS.ERRORS.NOT_FOUND,
-//     element: <NotFound />,
-//   },
-//   {
-//     path: '*',
-//     element: <Navigate to={PATHS.ERRORS.NOT_FOUND} replace={true} />,
-//   },
-// ];

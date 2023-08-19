@@ -1,9 +1,9 @@
 
 import { useNavigate } from 'react-router-dom';
 import { ROLES } from '../../../constants';
-// import { PATHS } from '../../../router/paths';
 import { useAuthContext } from '../../../context/AuthContext';
 import { useEffect } from 'react';
+import { PATHS } from '../../../router/paths';
 
 
 
@@ -18,13 +18,13 @@ const GuestGuard = ({children}) => {
   
   useEffect(() => {
     if (role === ROLES.ADMIN) {
-      navigate('/admin'); 
+      navigate(PATHS.ADMIN.ROOT); 
     }
   }, [role, navigate]);
   
   useEffect(() => {
     if (role === ROLES.USER) {
-      navigate('/user'); 
+      navigate(PATHS.USER.ROOT); 
     }
   }, [role, navigate]);
   

@@ -1,6 +1,3 @@
-// import React, { useState } from 'react'
-// import { useThemeContext } from '../../context/ThemeContext';
-// import { THEMES } from '../../constants';
 import Sidebar from '../../components/Sidebar';
 import UserAccount from '../../components/UserAccount';
 import HeaderTitle from '../../components/HeaderTitle';
@@ -13,8 +10,6 @@ import './style.css';
 
 
 const HomePage = () => {
-
-  
 
   const pathImage = "/assets/images/games/";
   const pathImagePlayed = "/assets/images/lastPlayed/";
@@ -87,21 +82,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-
-
-
-// {/*       
-//       Hello HAZEM  HAZEM  from HomePage
-      
-//       <button onClick={toggleTheme} style={theme === THEMES.DARK? {
-//         backgroundColor: 'white',
-//         color: 'black'
-//       }
-//       : {
-//         backgroundColor: 'black',
-//         color: 'white'
-//       }
-    
-//     }>{ theme === THEMES.DARK ? 'Light' : 'Dark' }</button> */}
-

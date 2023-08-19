@@ -4,6 +4,7 @@ import { useThemeContext } from '../../context/ThemeContext';
 import { useAuthContext } from '../../context/AuthContext';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { ROLES, THEMES } from '../../constants';
+import { PATHS } from '../../router/paths';
 
 
 
@@ -32,11 +33,11 @@ const Sidebar = () => {
   return (
     <div className='sidebar__main'>
       {role === ROLES.ADMIN ?
-        <NavLink to={"/admin"}>
+        <NavLink to={PATHS.ADMIN.ROOT}>
           <img src={`${pathImage}forSideber/svgviewer-output1.svg`} alt="svgviewer-output1" className='svgviewer-output1' />
         </NavLink>
         :
-        <NavLink to={"/user"}>
+        <NavLink to={PATHS.USER.ROOT}>
           <img src={`${pathImage}forSideber/svgviewer-output1.svg`} alt="svgviewer-output1" className='svgviewer-output1' />
         </NavLink>
       }
@@ -46,7 +47,7 @@ const Sidebar = () => {
         <ul className='ulIconSidepar'>
           <li>
             {role === ROLES.ADMIN ?
-              <NavLink to={"/admin/users"}>
+              <NavLink to={PATHS.ADMIN.USERS}>
                 {theme === THEMES.LIGHT ?
                   <img
                     src={`${pathImageIcon}settings-gray.svg`}

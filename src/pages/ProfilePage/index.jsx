@@ -8,7 +8,9 @@ const ProfilePage = () => {
 
   const { user } = useAuth();
 
-  // console.log(user);
+  console.log(user);
+  
+
 
   return (
 
@@ -37,9 +39,6 @@ const ProfilePage = () => {
               </tr>
             </tbody>
           </table>
-
-
-  
         </>
       </div>
     </div>

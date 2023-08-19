@@ -47,9 +47,9 @@ const reduser = (state, action) => {
       console.log(
         JSON.stringify(action?.payload)
       );
-      console.log(action?.payload);
-      console.log(action?.payload?.name);
-      console.log(action?.payload?.user);
+      // console.log(action?.payload);
+      // console.log(action?.payload?.name);
+      // console.log(action?.payload?.user);
       return {
         // ...state,
         isAuth: true,

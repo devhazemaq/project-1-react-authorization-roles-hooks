@@ -8,6 +8,7 @@ import { AUTH_API_PATHS } from '../../constants/auth';
 import GamersButtonReg from '../../components/Gamers/GamersButtonReg';
 import './style.css'
 import Sidebar from '../../components/Sidebar';
+import { PATHS } from '../../router/paths';
 
 
 const SettingsUsersPade = () => {
@@ -67,13 +68,10 @@ const SettingsUsersPade = () => {
           isLoading={isLoading}
         />
 
-        <NavLink to={"/admin"}>
+        <NavLink to={PATHS.ADMIN.ROOT}>
           <GamersButtonReg btnText="Back to Home" />
         </NavLink>
       </div>
-
-
-
 
     </div>
   )

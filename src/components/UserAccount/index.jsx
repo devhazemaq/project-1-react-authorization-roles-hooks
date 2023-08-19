@@ -1,6 +1,7 @@
 
 import { NavLink } from 'react-router-dom';
 import './style.css';
+import { PATHS } from '../../router/paths';
 // import { ROLES } from '../../constants';
 // import useAuth from '../../hooks/useAuth';
 
@@ -21,11 +22,11 @@ const UserAccount = () => {
         <p >{dataUser?.name}!</p>
       </div>
       {dataUser?.isAdmin === true ? 
-        <NavLink to={"/admin/user/profile"}>
+        <NavLink to={PATHS.ADMIN.PROFILE}>
           <img src={`${pathImage}profile_img_admin.png`} alt="profile_img" className='profile__img'   />
         </NavLink>
       : 
-        <NavLink to={"/user/profile"}>
+        <NavLink to={PATHS.USER.PROFILE}>
           <img src={`${pathImage}profile_img.png`} alt="profile_img" className='profile__img'   />
         </NavLink>
       }

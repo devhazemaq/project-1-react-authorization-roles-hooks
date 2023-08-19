@@ -1,18 +1,25 @@
 export const PATHS = {
-  LOGIN: '/login',
-  SGININ: '/sginin',
+  LOGIN: '/',
   SGINUP: '/sginup',
   USER: {
     ROOT: '/user',
-    PROFILE: '/users/profile',
+    PROFILE: '/user/profile',
   },
   ADMIN:{
     ROOT: '/admin',
     USERS: '/admin/users',
-    PROFILE: '/users/profile',
+    PROFILE: '/admin/user/profile',
 
   },
   ERRORS: {
     NOT_FOUND: '404',
   },
 };
+
+/*
+PATHS.ADMIN.ROOT
+PATHS.ADMIN.USERS
+PATHS.ADMIN.PROFILE
+PATHS.USER.ROOT
+PATHS.USER.PROFILE
+*/
