@@ -17,7 +17,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
 }
 
 .dark .useracc__welcome {
@@ -30,8 +29,14 @@
   line-height: normal;
 }
 
-
 .profile__img {
   width: 100px;
   height: 100px;
+}
+
+.profile__img:hover {
+  border-radius: 38px;
+  box-shadow: 0px 0px 6.3px 0px red, 0px 0px 12.6px 0px orange,
+    0px 0px 44.1px 0px yellow, 0px 0px 88.2px 0px green,
+    0px 0px 151.2px 0px blue, 0px 0px 264.6px 0px purple;
 }
